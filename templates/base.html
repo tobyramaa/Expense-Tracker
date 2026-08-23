@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Expense Tracker{% endblock %}</title>
+  {% block styles %}{% endblock %}
+</head>
+<body>
+
+  <div class="container">
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div class="flash-container">
+          {% for category, message in messages %}
+            <div class="flash flash-{{ category }}">
+              {{ message }}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+
+    {% block bottom_nav %}{% endblock %}
+
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      var flashes = document.querySelectorAll(".flash");
+      flashes.forEach(function (flash) {
+        setTimeout(function () {
+          flash.style.transition = "opacity 0.5s ease";
+          flash.style.opacity = "0";
+          setTimeout(function () {
+            flash.remove();
+          }, 500);
+        }, 3000);
+      });
+    });
+  </script>
+
+</body>
+</html>

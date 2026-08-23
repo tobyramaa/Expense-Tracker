@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Expense Tracker{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/home.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="hero-dark">
+
+  <div class="hero-nav">
+    <span class="brand">Expense<span class="brand-accent">Tracker</span></span>
+    <a href="{{ url_for('auth.register') }}" class="nav-btn">Sign Up</a>
+  </div>
+
+  <div class="hero-text">
+    <h1>Take control<br>of your money</h1>
+    <p>Track your spending, monitor your balance &mdash; all in one place.</p>
+    <div class="hero-actions">
+      <a href="{{ url_for('auth.register') }}" class="btn btn-hero-primary">Get Started</a>
+      <a href="{{ url_for('auth.login') }}" class="btn btn-hero-secondary">Log In</a>
+    </div>
+  </div>
+
+  <div class="hero-cards">
+    <div class="hero-card-row">
+      <div class="glass-card">
+        <p class="glass-label">Spending</p>
+        <p class="glass-value">$3,240</p>
+        <p class="glass-change down">-12%</p>
+      </div>
+      <div class="glass-card">
+        <p class="glass-label">Income</p>
+        <p class="glass-value">$8,500</p>
+        <p class="glass-change up">+8%</p>
+      </div>
+    </div>
+    <div class="glass-card">
+      <p class="glass-label">Privacy</p>
+      <p class="glass-text">Your data, your account only</p>
+    </div>
+  </div>
+
+</div>
+
+{% endblock %}

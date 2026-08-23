@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% block title %}Add Transaction{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/add_transaction.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="page-header">
+  <a href="{{ url_for('main.dashboard') }}">&larr;</a>
+  <h1>Add transaction</h1>
+</div>
+
+<div class="page-content">
+  <form method="POST" action="{{ url_for('main.add_transaction') }}">
+    {{ form.hidden_tag() }}
+
+    <div class="type-toggle">
+      {% for subfield in form.type %}
+        {{ subfield }}
+        <label for="{{ subfield.id }}">{{ subfield.label.text }}</label>
+      {% endfor %}
+    </div>
+    {% if form.type.errors %}
+      <div class="form-error">{{ form.type.errors[0] }}</div>
+    {% endif %}
+
+    <div class="form-group">
+      {{ form.title.label }}
+      {{ form.title(placeholder="e.g. Groceries") }}
+      {% if form.title.errors %}
+        <div class="form-error">{{ form.title.errors[0] }}</div>
+      {% endif %}
+    </div>
+
+    <div class="form-group">
+      {{ form.amount.label }}
+      {{ form.amount(placeholder="0.00", type="text") }}
+      {% if form.amount.errors %}
+        <div class="form-error">{{ form.amount.errors[0] }}</div>
+      {% endif %}
+    </div>
+
+    <div class="form-group">
+      {{ form.category.label }}
+      {{ form.category(placeholder="e.g. Food, Transport, Salary") }}
+      {% if form.category.errors %}
+        <div class="form-error">{{ form.category.errors[0] }}</div>
+      {% endif %}
+    </div>
+
+
+  <div class="form-group">
+    {{ form.description.label }}
+    {{ form.description(placeholder="Optional note about this transaction") }}
+
+    {% if form.description.errors %}
+      <div class="form-error">
+        {{ form.description.errors[0] }}
+      </div>
+    {% endif %}
+  </div>
+
+    {{ form.submit(class="btn btn-primary") }}
+  </form>
+</div>
+
+{% endblock %}

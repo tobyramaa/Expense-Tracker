@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block styles %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/dashboard.css') }}">
+{% endblock %}
+
+{% block content %}
+
+<div class="page-content">
+  <div class="dashboard-header">
+    <div>
+      <p class="greeting-label">Welcome back, </p>
+      <p class="greeting-name">{{ current_user.username }}</p>
+    </div>
+
+    <a href="{{ url_for('auth.logout') }}" class="logout-link">Log out</a>
+  </div>
+
+  <div class="card balance-card">
+    <p class="balance-label">Current balance</p>
+    <p class="balance-amount">₦{{ "{:,.2f}".format(balance) }}</p>
+  </div>
+
+  <div class="grid-2 mini-cards">
+    <div class="card">
+      <p class="mini-card-label">Income</p>
+      <p class="mini-card-amount income">₦{{ "{:,.2f}".format(total_income) }}</p>
+    </div>
+
+    <div class="card">
+      <p class="mini-card-label">Expenses</p>
+      <p class="mini-card-amount expense">₦{{ "{:,.2f}".format(total_expense) }}</p>
+    </div>
+  </div>
+
+  <p class="section-label">Recent transactions</p>
+
+  {% for transaction in recent_transactions %}
+    <div class="card transaction-row">
+      <div>
+        <p class="transaction-title"> {{ transaction.title}}</p>
+        <p class="transaction-meta"> {{ transaction.category}} &middot; {{transaction.date.strftime('%b %d %Y') }}</p>
+      </div>
+
+      <p class="transaction-amount {{'income' if transaction.type == 'income' else 'expense' }}">
+        {{ '+' if transaction.type == 'income' else '-' }}₦{{ "{:,.2f}".format(transaction.amount) }}
+      </p>
+    </div>
+  {% else %}
+    <div class="card empty-state">
+      No transactions yet. Add your first one below
+    </div>
+  {% endfor %}
+
+</div>
+
+<a href="{{ url_for('main.add_transaction') }}" class="add-transaction-btn">+</a>
+
+{% endblock %}
+
+{% block bottom_nav %}
+  <div class="bottom-nav">
+    <a href="{{ url_for('main.dashboard') }}">Dashboard</a>
+    <a href="{{ url_for('main.all_transactions') }}"> All Transactions</a>
+  </div>
+{% endblock %}

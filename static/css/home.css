@@ -1,0 +1,316 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: #f3f4f6;
+  color: #1f2937;
+}
+
+.container {
+  width: 100%;
+  max-width: 640px;
+  margin: 24px auto 0 auto;
+  min-height: calc(100vh - 24px);
+  background-color: #f3f4f6;
+  position: relative;
+  padding-bottom: 0;
+  border-radius: 24px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+}
+
+.flash-container {
+  padding: 16px 16px 0 16px;
+}
+
+.flash {
+  padding: 10px 16px;
+  border-radius: 10px;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+.flash-success {
+  background-color: #d1fae5;
+  color: #065f46;
+}
+
+.flash-error, .flash-danger {
+  background-color: #fee2e2;
+  color: #991b1b;
+}
+
+.flash-info {
+  background-color: #dbeafe;
+  color: #1e40af;
+}
+
+.hero-dark {
+  background: linear-gradient(160deg, #1e1b3a 0%, #3b0f6b 55%, #6d28d9 100%);
+  min-height: 100vh;
+  padding-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.hero-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 24px;
+}
+
+.brand {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.brand-accent {
+  color: #a78bfa;
+}
+
+.nav-btn {
+  background-color: #ffffff;
+  color: #6d28d9;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.hero-text {
+  text-align: center;
+  padding: 24px 28px 20px 28px;
+}
+
+.hero-text h1 {
+  color: #ffffff;
+  font-size: 28px;
+  font-weight: 700;
+  line-height: 1.25;
+  margin: 0 0 12px 0;
+}
+
+.hero-text p {
+  color: #d1c4f0;
+  font-size: 13px;
+  margin: 0 0 22px 0;
+  line-height: 1.5;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: 10px;
+  border: none;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-hero-primary {
+  background-color: #ffffff;
+  color: #6d28d9;
+}
+
+.btn-hero-secondary {
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+.hero-cards {
+  padding: 10px 24px 0 24px;
+}
+
+.hero-card-row {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.glass-card {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 14px;
+}
+
+.glass-label {
+  color: #d1c4f0;
+  font-size: 11px;
+  margin: 0 0 4px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.glass-value {
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0;
+}
+
+.glass-change {
+  font-size: 10px;
+  margin: 2px 0 0 0;
+}
+
+.glass-change.up {
+  color: #4ade80;
+}
+
+.glass-change.down {
+  color: #f87171;
+}
+
+.glass-text {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  margin: 0;
+}
+
+
+@media (max-width: 1023px) {
+  .container {
+    max-width: 480px;
+    border-radius: 0 0 24px 24px;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04);
+  }
+}
+
+@media (max-width: 639px) {
+  .container {
+    max-width: 100%;
+    margin: 0;
+    min-height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+    padding-bottom: 0;
+  }
+
+
+  .hero-dark {
+    min-height: 100vh;
+  }
+
+  .hero-text h1 {
+    font-size: 36px;
+    padding-bottom: 12px;
+  }
+
+  .hero-text p {
+    font-size: 14px;
+  }
+
+  .glass-value {
+    font-size: 20px;
+  }
+
+  .glass-text {
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .container {
+    max-width: 100%;
+    margin: 0;
+    min-height: 100vh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  .hero-text {
+    max-width: 620px;
+    margin: 0 auto;
+    padding: 72px 28px 36px 28px;
+  }
+
+  .hero-text h1 {
+    font-size: 42px;
+    margin-bottom: 16px;
+  }
+
+  .hero-text p {
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+
+  .hero-nav {
+    padding: 24px 48px;
+  }
+
+  .brand {
+    font-size: 18px;
+  }
+
+  .nav-btn {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+
+  .hero-actions {
+    gap: 14px;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    padding: 13px 26px;
+    font-size: 14px;
+    border-radius: 10px;
+  }
+
+  .hero-cards {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px 48px 40px 48px;
+  }
+
+  .hero-card-row {
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .glass-card {
+    padding: 28px;
+    border-radius: 18px;
+  }
+
+  .glass-label {
+    font-size: 12px;
+    margin-bottom: 6px;
+  }
+
+  .glass-value {
+    font-size: 22px;
+  }
+
+  .glass-change {
+    font-size: 12px;
+    margin-top: 4px;
+  }
+
+  .glass-text {
+    font-size: 15px;
+  }
+}
