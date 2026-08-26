@@ -16,7 +16,7 @@
 
   <div class="hero-text">
     <h1>Take control<br>of your money</h1>
-    <p>Track your spending, monitor your balance &mdash; all in one place.</p>
+    <p>Track your spending, monitor your balance all in one place.</p>
     <div class="hero-actions">
       <a href="{{ url_for('auth.register') }}" class="btn btn-hero-primary">Get Started</a>
       <a href="{{ url_for('auth.login') }}" class="btn btn-hero-secondary">Log In</a>
@@ -27,12 +27,12 @@
     <div class="hero-card-row">
       <div class="glass-card">
         <p class="glass-label">Spending</p>
-        <p class="glass-value">$3,240</p>
+        <p class="glass-value">₦3,240</p>
         <p class="glass-change down">-12%</p>
       </div>
       <div class="glass-card">
         <p class="glass-label">Income</p>
-        <p class="glass-value">$8,500</p>
+        <p class="glass-value">₦8,500</p>
         <p class="glass-change up">+8%</p>
       </div>
     </div>
@@ -43,5 +43,54 @@
   </div>
 
 </div>
+
+<div class="section-light">
+  <h2 class="section-title">Everything you need to manage your money</h2>
+
+  <div class="feature-grid">
+    <div class="feature-block">
+      <div class="feature-icon">₦</div>
+      <h3>Track Spending</h3>
+      <p>Log every expense in seconds and see exactly where your money goes.</p>
+    </div>
+    <div class="feature-block">
+      <div class="feature-icon">%</div>
+      <h3>See Your Balance</h3>
+      <p>A clear, always up-to-date view of your income, expenses, and balance.</p>
+    </div>
+    <div class="feature-block">
+      <div class="feature-icon">#</div>
+      <h3>Stay Organized</h3>
+      <p>Categorize transactions so you always know where your spending stands.</p>
+    </div>
+  </div>
+</div>
+
+<div class="section-steps">
+  <h2 class="section-title">How it works</h2>
+
+  <div class="steps-grid">
+    <div class="step-block">
+      <div class="step-number">1</div>
+      <h3>Create an account</h3>
+      <p>Sign up in seconds no card required.</p>
+    </div>
+    <div class="step-block">
+      <div class="step-number">2</div>
+      <h3>Add your transactions</h3>
+      <p>Log income and expenses as they happen.</p>
+    </div>
+    <div class="step-block">
+      <div class="step-number">3</div>
+      <h3>Track your balance</h3>
+      <p>Watch your dashboard update automatically.</p>
+    </div>
+  </div>
+</div>
+
+<footer class="site-footer">
+  <span class="brand footer-brand">Expense<span class="brand-accent">Tracker</span></span>
+  <p>&copy; 2026 ExpenseTracker. All rights reserved.</p>
+</footer>
 
 {% endblock %}
